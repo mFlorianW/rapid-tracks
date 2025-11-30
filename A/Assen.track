@@ -1,0 +1,22 @@
+{
+    "name": "Assen",
+    "startline": {
+        "latitude": 52.962324,
+        "longitude": 6.524115
+    },
+    "finishline": {
+        "latitude": 52.962324,
+        "longitude": 6.524115
+    },
+    "sectors": [
+        {
+            "latitude": 52.959453,
+            "longitude": 6.525305
+        },
+        {
+            "latitude": 52.955628,
+            "longitude": 6.512773
+        }
+    ]
+}
+

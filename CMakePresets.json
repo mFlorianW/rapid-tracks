@@ -1,0 +1,47 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "Configure (install to $HOME/.local/share/rapid/track)",
+      "description": "Installs files into the current user's home directory under .local/share/rapid/track/",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/.build",
+      "cacheVariables": {
+        "CMAKE_INSTALL_PREFIX": "$env{HOME}/.local/share/rapid/"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "workflow-install",
+      "displayName": "Build (install target)",
+      "configurePreset": "default",
+      "targets": [
+        "install"
+      ]
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "install",
+      "displayName": "Configure + Install to $HOME/.local/share/rapid/track",
+      "description": "Runs configure and then installs into the user's home directory",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "default"
+        },
+        {
+          "type": "build",
+          "name": "workflow-install"
+        }
+      ]
+    }
+  ]
+}
